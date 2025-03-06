@@ -66,7 +66,7 @@
             </div>
 
             <h3>🤝 Contributors</h3>
-            <p><strong>Chaotic Minds</strong></p>
+            <p><strong>Developed by Chaotic Minds</strong></p>
 
             <h3>📜 License</h3>
             <p>This project is licensed under the CC BY-NC 4.0 License. You may not use it for commercial purposes without permission.</p>
@@ -84,6 +84,39 @@
                 <a href="your_payment_link_here" class="buy-btn">Rs. 99</a>
             </div>
 
+            <!-- Contact Form Section -->
+        <section class="contact">
+            <h2>Any Doubts? DM me</h2>
+            <div class="right-contact">
+                <form action="https://formspree.io/f/mvgkpzgo" method="post" class="contact-form">
+                    <div class="input-control i-c-2">
+                        <input type="text" required placeholder="Your Name" id="name" name="Name">
+                        <input type="email" required placeholder="Your Email" id="mail" name="Mail">
+                    </div>
+                    <div class="input-control">
+                        <input type="text" required placeholder="Enter Subject" id="subject" name="Subject">
+                    </div>
+                    <div class="input-control">
+                        <textarea id="text1" name="Message" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="c-btn" type="submit">Send</button>
+                        <button class="c-btn clear-btn" type="button" id="clearForm">Clear</button>
+                    </div>
+                </form>
+
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/chaotic_minds_279" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i> <span>Instagram</span>
+                    </a>
+                    <a href="mailto:chaoticminds279@gmail.com" class="social-link email">
+                        <i class="fas fa-envelope"></i> <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         </section>
     </main>
 
@@ -91,5 +124,23 @@
         <p>&copy; 2025 Chaotic Minds. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.querySelector(".contact-form").addEventListener("submit", function(event) {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("mail").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("text1").value.trim();
+    
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Please fill out all fields before submitting.");
+                event.preventDefault();
+            }
+        });
+
+        // Clear button functionality
+        document.getElementById("clearForm").addEventListener("click", function() {
+            document.querySelector(".contact-form").reset();
+        });
+    </script>
 </body>
 </html>
